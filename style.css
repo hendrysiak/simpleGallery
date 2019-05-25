@@ -1,0 +1,138 @@
+/* div {
+  --button-height: 27px;
+  --button-width: 35px;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header,
+footer {
+  background: #000;
+}
+.right {
+  height: 100vh;
+  position: fixed;
+  left: 100%;
+  top: 7%;
+  background: rgb(78, 76, 76);
+  opacity: 0.5;
+  transition: 0.5s ease;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.right.active {
+  left: 0%;
+}
+
+body {
+  background: rgb(212, 210, 210);
+}
+
+/* .image-small {
+  height: 50px;
+  width: 100px;
+
+  margin: 10px;
+} */
+
+img {
+  height: 50px;
+  width: 100px;
+  opacity: 1;
+  margin: 10px;
+}
+.image-big {
+  width: 100%;
+}
+
+.image-great {
+  width: 80%;
+  height: 40%;
+}
+
+.image-small > .active {
+  border: 2px solid yellow;
+}
+
+/* .button_container {
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  height: --button-height;
+  width: --button-width;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+
+.button_container:hover {
+  opacity: 0.7;
+}
+.button_container.active > .top {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: black;
+}
+.button_container.active > .middle {
+  opacity: 0;
+  background: black;
+}
+
+.button_container.active > .bottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: black;
+} */
+
+.burger_menu {
+  font-size: 25px;
+  position: absolute;
+  z-index: 1;
+  right: 8%;
+  top: 10%;
+}
+@media (min-width: 1024px) {
+  .right {
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    background-color: rgb(212, 210, 210);
+    z-index: 0;
+  }
+  .left {
+    width: 50%;
+    height: 100%;
+  }
+  .burger_menu {
+    opacity: 0;
+  }
+  footer {
+    z-index: 1;
+  }
+  img {
+    height: 100px;
+    width: 200px;
+  }
+}
