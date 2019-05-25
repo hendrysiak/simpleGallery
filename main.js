@@ -16,8 +16,8 @@ function openMenu() {
 
 function changeImage(e) {
     images.forEach(image => {
-        if (image.lastElementChild.classList.contains('active')) {
-            image.lastElementChild.classList.remove('active')
+        if (image.classList.contains('active')) {
+            image.classList.remove('active')
         }
     })
     console.log(e.target)

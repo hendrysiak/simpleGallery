@@ -28,7 +28,7 @@ footer {
   height: 100vh;
   position: fixed;
   left: 100%;
-  top: 7%;
+  top: 10%;
   background: rgb(78, 76, 76);
   opacity: 0.5;
   transition: 0.5s ease;
@@ -72,7 +72,7 @@ img {
   height: 40%;
 }
 
-.image-small > .active {
+.image-small.active {
   border: 2px solid yellow;
 }
 
@@ -109,7 +109,13 @@ img {
   position: absolute;
   z-index: 1;
   right: 8%;
-  top: 10%;
+  top: 8%;
+}
+@media (orientation: landscape) {
+  .burger_menu {
+    right: 6%;
+    top: 12%;
+  }
 }
 @media (min-width: 1024px) {
   .right {
@@ -117,7 +123,7 @@ img {
     opacity: 1;
     position: absolute;
     width: 50%;
-    height: 90%;
+    height: 85%;
     background-color: rgb(212, 210, 210);
     z-index: 0;
   }
