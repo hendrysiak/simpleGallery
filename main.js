@@ -20,7 +20,6 @@ function changeImage(e) {
             image.classList.remove('active')
         }
     })
-    console.log(e.target)
     presentation.innerHTML = '';
     title.textContent = '';
     title.textContent = e.target.alt;

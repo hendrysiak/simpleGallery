@@ -2,35 +2,53 @@
   --button-height: 27px;
   --button-width: 35px;
 } */
+:root {
+  --header-height: 12vh;
+  --footer-height: 5vh;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   color: white;
 }
+
 body {
+
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+header {
+  height: var(--header-height);
+  line-height: var(--header-height);
+}
+
+footer {
+  height: var(--footer-height);
+  line-height: var(--footer-height);
+}
+
 header,
 footer {
   background: #000;
 }
+
 .right {
-  height: 100vh;
   position: fixed;
   left: 100%;
-  top: 10%;
-  background: rgb(78, 76, 76);
-  opacity: 0.5;
+  bottom: var(--footer-height);
+  top: var(--header-height);
+  background: rgba(78%, 76%, 76%, 85%);
+
   transition: 0.5s ease;
 }
 
@@ -50,19 +68,14 @@ body {
   background: rgb(212, 210, 210);
 }
 
-/* .image-small {
-  height: 50px;
-  width: 100px;
-
-  margin: 10px;
-} */
 
 img {
-  height: 50px;
+  height: 40px;
   width: 100px;
   opacity: 1;
   margin: 10px;
 }
+
 .image-big {
   width: 100%;
 }
@@ -76,48 +89,28 @@ img {
   border: 2px solid yellow;
 }
 
-/* .button_container {
-  position: fixed;
-  top: 5%;
-  right: 2%;
-  height: --button-height;
-  width: --button-width;
-  cursor: pointer;
-  z-index: 100;
-  transition: opacity 0.25s ease;
-}
-
-.button_container:hover {
-  opacity: 0.7;
-}
-.button_container.active > .top {
-  transform: translateY(11px) translateX(0) rotate(45deg);
-  background: black;
-}
-.button_container.active > .middle {
-  opacity: 0;
-  background: black;
-}
-
-.button_container.active > .bottom {
-  transform: translateY(-11px) translateX(0) rotate(-45deg);
-  background: black;
-} */
 
 .burger_menu {
   font-size: 25px;
   position: absolute;
   z-index: 1;
   right: 8%;
-  top: 8%;
+  top: var(--header-height);
 }
+
 @media (orientation: landscape) {
   .burger_menu {
     right: 6%;
-    top: 12%;
+    top: var(--header-height);
   }
 }
-@media (min-width: 1024px) {
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 6vh;
+    --footer-height: 5vh;
+  }
+
   .right {
     left: 50%;
     opacity: 1;
@@ -127,16 +120,24 @@ img {
     background-color: rgb(212, 210, 210);
     z-index: 0;
   }
+
+  .right.active {
+    left: 50%;
+  }
+
   .left {
     width: 50%;
     height: 100%;
   }
+
   .burger_menu {
     opacity: 0;
   }
+
   footer {
     z-index: 1;
   }
+
   img {
     height: 100px;
     width: 200px;
